@@ -1,12 +1,18 @@
-name: 'Container Action Template'
-description: 'Get started with Container actions'
-author: 'GitHub'
-inputs: 
-  myInput:
-    description: 'Input to use'
-    default: 'world'
+name: 'Uppercase'
+description: 'Convert text to uppercase'
+author: 'miyajan'
+inputs:
+  text:
+    description: 'Text to be converted to uppercase'
+    required: true
+outputs:
+  uppercase-text:
+    description: 'Text converted to uppercase'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.myInput }}
+    - ${{ inputs.text }}
+branding:
+  icon: 'chevrons-up'
+  color: 'green'
